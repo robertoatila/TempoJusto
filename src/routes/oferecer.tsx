@@ -54,7 +54,7 @@ function Oferecer() {
   }
 
   const campoClasse = "min-h-12 w-full rounded-lg border border-input bg-card px-3 text-base";
-  const Erro = ({ id, mensagem }: { id: string; mensagem?: string }) => mensagem ? <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />{mensagem}</p> : null;
+  const Erro = ({ id, mensagem }: { id: string; mensagem: string | undefined }) => mensagem ? <p id={id} className="mt-1.5 flex items-start gap-1.5 text-sm font-medium text-destructive"><AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />{mensagem}</p> : null;
 
   if (publicado) {
     return <div className="mx-auto w-full max-w-2xl px-4 py-16"><div className="card-soft p-8 text-center" role="status"><CheckCircle2 className="mx-auto size-10 text-accent" aria-hidden="true" /><h1 className="mt-4 text-3xl font-bold">Habilidade publicada</h1><p className="mt-2 text-muted-foreground">“{form.titulo}” já pode ser encontrada por quem precisa. Você recebe Créditos-Hora quando a troca for confirmada pelas duas pessoas.</p><div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row"><Link to="/perfil" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-primary px-5 font-semibold text-primary-foreground">Ver no meu perfil</Link><Link to="/explorar" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-input px-5 font-semibold">Explorar habilidades</Link></div></div></div>;
